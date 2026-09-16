@@ -39,6 +39,7 @@ import { FeaturedPreview } from './motion-details';
 import { Progress } from '@/components/ui/progress';
 import { Slider } from '@/components/ui/slider';
 import { withBasePath } from '@/lib/base-path';
+import { GithubIcon } from './github-icon';
 
 function Mark({ className, ...props }: SVGProps<SVGSVGElement> = {}) {
   return (
@@ -790,7 +791,7 @@ export default function Home() {
           ref={navRoot}
           id="navigation"
           className="navigation rule"
-          aria-label="Worlds"
+          aria-label="Main navigation"
           data-rule-arrival="navigation-rule"
           {...arrivalProps('navigation-rule')}
           onPointerEnter={handleNavigationPointerEnter}
@@ -810,6 +811,16 @@ export default function Home() {
           >
             {navOpen ? <ChevronUp /> : <ChevronDown />} Navigation array
           </Button>
+          <a
+            className="github-source-link micro-button"
+            href="https://github.com/neilopet/2advanced-attractor-homage"
+            target="_blank"
+            rel="noopener noreferrer"
+            {...arrivalProps('navigation-toggle')}
+          >
+            <GithubIcon />
+            <span>GitHub source</span>
+          </a>
           <div
             id="world-list"
             className="world-list"
@@ -1067,8 +1078,16 @@ export default function Home() {
               Original design: 2Advanced / AI-assisted scenic remasters.
             </span>
           </p>
-          <span {...arrivalProps('footer-right')}>
+          <span className="footer-links" {...arrivalProps('footer-right')}>
             <a href={withBasePath('/licensing.html')}>CREDITS &amp; LICENSES</a>
+            <a
+              href="https://github.com/neilopet/2advanced-attractor-homage"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubIcon />
+              <span>GitHub source</span>
+            </a>
           </span>
         </footer>
       </div>

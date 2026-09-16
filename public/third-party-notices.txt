@@ -34,6 +34,8 @@ Base UI and helpers
 - reselect 5.3.0 — MIT — Copyright (c) 2015-2018 Reselect Contributors.
 
 UI and utility code
+- Font Awesome Free 6.7.2 — CC BY 4.0 — one embedded GitHub brand SVG icon;
+  its attribution and source are recorded below.
 - lucide-react 1.31.0 — ISC, plus the included Feather-derived icons under
   the MIT license; both notices are reproduced below.
 - class-variance-authority 0.7.1 — Apache-2.0 — Copyright 2022 Joe Bell.
@@ -50,6 +52,16 @@ Framework compatibility
 
 The reusable shadcn/ui source primitives have a separate source-level MIT
 notice in the final section below and in ../third_party/shadcn-LICENSE.txt.
+
+==========================================================================
+Font Awesome Free 6.7.2 — GitHub brand icon
+Copyright 2024 Fonticons, Inc.
+
+The GitHub SVG path is used under CC BY 4.0. This project embeds one
+individual brand SVG icon and does not redistribute the Font Awesome font.
+
+Source: https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.7.2/svgs/brands/github.svg
+License: https://creativecommons.org/licenses/by/4.0/
 
 ==========================================================================
 @rive-app/react-canvas 4.34.2

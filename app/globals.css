@@ -190,6 +190,9 @@ p {
   color: var(--scene-accent);
 }
 .navigation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   min-height: 32px;
   background-image:
     linear-gradient(rgba(var(--scene-rgb), 0.65), rgba(var(--scene-rgb), 0.65)),
@@ -205,6 +208,14 @@ p {
 }
 .nav-toggle {
   height: 28px;
+}
+.github-source-link {
+  margin-left: auto;
+  white-space: nowrap;
+}
+.github-source-link svg {
+  width: 12px;
+  height: 12px;
 }
 .world-list {
   position: absolute;
@@ -476,6 +487,24 @@ p {
 .footer > span:last-child {
   text-align: right;
 }
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 28px;
+  white-space: nowrap;
+}
+.footer-links svg {
+  width: 11px;
+  height: 11px;
+}
 .footer p {
   line-height: 1.8;
 }
@@ -541,8 +570,12 @@ p {
   .footer {
     grid-template-columns: 1fr;
   }
-  .footer > span {
+  .footer > span:first-child {
     display: none;
+  }
+  .footer-links {
+    justify-content: center;
+    gap: 12px;
   }
   .content-panel {
     top: 100px;
