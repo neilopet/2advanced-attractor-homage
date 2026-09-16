@@ -38,6 +38,7 @@ import { Shutters } from './shutters';
 import { FeaturedPreview } from './motion-details';
 import { Progress } from '@/components/ui/progress';
 import { Slider } from '@/components/ui/slider';
+import { withBasePath } from '@/lib/base-path';
 
 function Mark({ className, ...props }: SVGProps<SVGSVGElement> = {}) {
   return (
@@ -556,7 +557,7 @@ export default function Home() {
               <NextImage
                 unoptimized
                 loading="eager"
-                src="/scenes/splash-vector.svg"
+                src={withBasePath('/scenes/splash-vector.svg')}
                 alt=""
                 width="1894"
                 height="1620"
@@ -570,12 +571,12 @@ export default function Home() {
                 onError={() => setSplashAssembled(true)}
                 src={
                   splashLoaderElapsed
-                    ? '/scenes/original-splash.mp4'
+                    ? withBasePath('/scenes/original-splash.mp4')
                     : undefined
                 }
                 poster={
                   splashLoaderElapsed
-                    ? '/scenes/original-splash.webp'
+                    ? withBasePath('/scenes/original-splash.webp')
                     : undefined
                 }
                 width="1894"
@@ -588,7 +589,7 @@ export default function Home() {
             )}
             {!reducedMotion && (
               <NextImage
-                src="/scenes/splash-vector.svg"
+                src={withBasePath('/scenes/splash-vector.svg')}
                 alt=""
                 width={1894}
                 height={1620}
@@ -604,7 +605,7 @@ export default function Home() {
               />
             )}
             <NextImage
-              src="/scenes/attractor-logotype.svg"
+              src={withBasePath('/scenes/attractor-logotype.svg')}
               alt=""
               width="681"
               height="67"
@@ -948,7 +949,7 @@ export default function Home() {
             }
           >
             <FeaturedPreview
-              poster="/scenes/blue-remaster.webp"
+              poster={withBasePath('/scenes/blue-remaster.webp')}
               accent={world.accent}
               rgb={world.rgb}
               onCue={(cue) => sound.current?.interaction(cue)}
@@ -1066,7 +1067,9 @@ export default function Home() {
               Original design: 2Advanced / AI-assisted scenic remasters.
             </span>
           </p>
-          <span {...arrivalProps('footer-right')}>EXPLORE / DISCOVER</span>
+          <span {...arrivalProps('footer-right')}>
+            <a href={withBasePath('/licensing.html')}>CREDITS &amp; LICENSES</a>
+          </span>
         </footer>
       </div>
       <p className="sr-only" aria-live="polite">

@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import { strict as assert } from 'node:assert';
 import { Soundscape } from '../lib/soundscape.ts';
+import { withBasePath } from '../lib/base-path.ts';
 
 function fixture() {
   const audio: FakeAudio[] = [];
@@ -367,7 +368,10 @@ void test('assembly cue plays once, fades only the loader, and cannot leak acros
     f.deferAssembly();
     const pendingAssembly = sound.startAssembly();
     assert.equal(f.audio[1].loop, false);
-    assert.equal(f.audio[1].src, '/audio/root-id-143-source-count.wav');
+    assert.equal(
+      f.audio[1].src,
+      withBasePath('/audio/root-id-143-source-count.wav'),
+    );
     f.advance(150);
     assert.ok(Math.abs(f.audio[0].volume - 0.175) < 0.00001);
     sound.reset();

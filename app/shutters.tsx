@@ -8,8 +8,9 @@ import {
   EventType,
   RuntimeLoader,
 } from '@rive-app/react-canvas';
+import { withBasePath } from '@/lib/base-path';
 
-RuntimeLoader.setWasmUrl('/rive/canvas.wasm');
+RuntimeLoader.setWasmUrl(withBasePath('/rive/canvas.wasm'));
 
 type Props = {
   command: 'close' | 'open' | null;
@@ -49,7 +50,7 @@ export function Shutters({
   }, [onReady, onStart, onClosed, onOpened, onError, onOpeningPainted]);
   const active = useRef<string | null>(null);
   const { rive, RiveComponent } = useRive({
-    src: '/rive/attractor-shutters.riv',
+    src: withBasePath('/rive/attractor-shutters.riv'),
     artboard: 'AttractorShutters',
     // oxlint-disable-next-line typescript/no-deprecated -- Two named one-shot timelines are the deliberate, bounded prototype contract.
     animations: 'CloseShutters',

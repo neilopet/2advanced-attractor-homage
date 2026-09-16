@@ -32,8 +32,9 @@ This repository is a compact, public snapshot of the Attractor homage. Keep chan
 - Document asset provenance, dimensions, processing, and known caveats in [`docs/ASSET-CREDITS.md`](docs/ASSET-CREDITS.md) or the relevant asset note.
 - Label AI-assisted remasters as interpretations. They are lossless returned-size outputs, not recovered historical detail or 4K originals.
 - Do not guess rights, invent original credits, or imply affiliation, ownership, or license grants for 2Advanced media, branding, artwork, audio, or source files.
-- Keep the Rive runtime license scoped to the runtime. [`third_party/rive-LICENSE.txt`](third_party/rive-LICENSE.txt) does not license the rest of this repository.
-- Keep the shadcn/ui notice scoped to the reusable primitives. [`third_party/shadcn-LICENSE.txt`](third_party/shadcn-LICENSE.txt) does not license the rest of this repository.
+- Keep the root MIT license scoped to original project software and documentation, to the extent Neil Opet and contributors hold the relevant rights, as mapped in [`LICENSING.md`](LICENSING.md). Do not add blanket copyright headers to media or make claims about AI-only output.
+- Keep the Rive runtime license scoped to the runtime. [`third_party/rive-LICENSE.txt`](third_party/rive-LICENSE.txt) does not license the rest of this repository; keep the complete curated browser-runtime notices in [`public/third-party-notices.txt`](public/third-party-notices.txt) aligned with shipped imports.
+- Keep the shadcn/ui notice scoped to the reusable primitives and copied helpers (`components/ui/`, `lib/utils.ts`, and `hooks/use-mobile.ts`). [`third_party/shadcn-LICENSE.txt`](third_party/shadcn-LICENSE.txt) does not license the rest of this repository.
 - Keep curated reusable notes, examples, and studies in `docs/` or `assets/`. Do not add raw downloaded studies, screenshots, logs, deployment tarballs, or local evidence to the public snapshot.
 - Local evidence belongs under ignored `artifacts/`, `scratch/`, `evidence/`, or `review/` while it is being inspected.
 - Never include private user data, credentials, tokens, private keys, private account identifiers, or owner-specific hosting/deployment IDs in source, docs, media metadata, or examples. Public GitHub owner links and intentional noreply commit identity are allowed.
@@ -43,6 +44,7 @@ This repository is a compact, public snapshot of the Attractor homage. Keep chan
 - Keep the root README welcoming and concise: what the experience is, how to run it, the repository map, credits, and scope.
 - Put timing measurements, browser findings, audio counts, reconstruction caveats, and other detailed evidence in [`docs/EXPERIENCE.md`](docs/EXPERIENCE.md).
 - Put source links, media provenance, rights boundaries, and third-party notices in [`docs/ASSET-CREDITS.md`](docs/ASSET-CREDITS.md).
+- Keep the scoped license map in [`LICENSING.md`](LICENSING.md), the browser-facing summary in [`public/licensing.html`](public/licensing.html), and the shipped runtime copy in [`public/third-party-notices.txt`](public/third-party-notices.txt).
 - Keep remaster candidates and review artifacts out of public references when the files are not shipped. The adopted files and source distinctions are recorded in [`assets/remasters/README.md`](assets/remasters/README.md).
 - Use relative links for repository files. Check that every local Markdown link resolves from the document that contains it.
 - Do not add CI badges or claim checks are passing unless a real, reproducible check supports the claim.
@@ -70,6 +72,7 @@ npm run build
 - Use reproducible source and inspect generated output before release. Do not force-push or move an existing tag.
 - Use annotated SemVer tags for intentional releases. Keep release notes factual and link to the relevant documentation.
 - A GitHub source release does not authorize website deployment. Treat deployment as a separate task with its own scope.
+- The independent GitHub Pages profile uses `build:static` and `NEXT_PUBLIC_BASE_PATH` (empty by default; set it to the repository base path for a project site). The static client is written to `dist/client`; keep that deployment path separate from source licensing and media rights.
 
 ## Delegated work
 

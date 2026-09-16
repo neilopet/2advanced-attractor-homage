@@ -1,3 +1,5 @@
+import { withBasePath } from './base-path.ts';
+
 export type InterfaceCue =
   | 'navigation'
   | 'item'
@@ -9,10 +11,16 @@ export type InterfaceCue =
 // Music loops in one decoded audio buffer: no media-element seek between loops.
 // Loading ambience and shutter cues remain independent, persistent players.
 export class Soundscape {
-  private intro = new Audio('/audio/original-loading.wav');
-  private assemblyCue = new Audio('/audio/root-id-143-source-count.wav');
-  private closeCue = new Audio('/audio/original-shutter-close.wav');
-  private openCue = new Audio('/audio/original-shutter-open.wav');
+  private intro = new Audio(withBasePath('/audio/original-loading.wav'));
+  private assemblyCue = new Audio(
+    withBasePath('/audio/root-id-143-source-count.wav'),
+  );
+  private closeCue = new Audio(
+    withBasePath('/audio/original-shutter-close.wav'),
+  );
+  private openCue = new Audio(
+    withBasePath('/audio/original-shutter-open.wav'),
+  );
   private activeCue: HTMLAudioElement | null = null;
   private context = new AudioContext();
   private musicVolume = this.context.createGain();
@@ -45,12 +53,12 @@ export class Soundscape {
     this.intro.loop = true;
     this.assemblyCue.loop = false;
     const cues: [InterfaceCue, string][] = [
-      ['navigation', '/audio/nav-hover.wav'],
-      ['item', '/audio/item-hover.wav'],
-      ['panel', '/audio/panel-open.wav'],
-      ['mini', '/audio/mini-hover.wav'],
-      ['navigationOpen', '/audio/navigation-open.wav'],
-      ['windowTitle', '/audio/window-title.wav'],
+      ['navigation', withBasePath('/audio/nav-hover.wav')],
+      ['item', withBasePath('/audio/item-hover.wav')],
+      ['panel', withBasePath('/audio/panel-open.wav')],
+      ['mini', withBasePath('/audio/mini-hover.wav')],
+      ['navigationOpen', withBasePath('/audio/navigation-open.wav')],
+      ['windowTitle', withBasePath('/audio/window-title.wav')],
     ];
     for (const [name, url] of cues) {
       void fetch(url)
@@ -66,7 +74,7 @@ export class Soundscape {
     }
     this.musicEnvelope.connect(this.musicVolume);
     this.musicVolume.connect(this.context.destination);
-    this.musicBuffer = fetch('/audio/original-music.wav')
+    this.musicBuffer = fetch(withBasePath('/audio/original-music.wav'))
       .then((response) => {
         if (!response.ok) throw new Error('Music could not load');
         return response.arrayBuffer();

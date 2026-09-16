@@ -1,7 +1,13 @@
+import { withBasePath } from './base-path.ts';
+
 export const worlds = [
   {
     id: 'blue',
-    scene: { src: '/scenes/blue-remaster.webp', width: 1954, height: 805 },
+    scene: {
+      src: withBasePath('/scenes/blue-remaster.webp'),
+      width: 1954,
+      height: 805,
+    },
     name: 'Blue Aztec',
     title: 'The arrival',
     accent: '#51bcec',
@@ -12,7 +18,11 @@ export const worlds = [
   },
   {
     id: 'green',
-    scene: { src: '/scenes/green-remaster.webp', width: 2027, height: 776 },
+    scene: {
+      src: withBasePath('/scenes/green-remaster.webp'),
+      width: 2027,
+      height: 776,
+    },
     name: 'Green Aztec',
     title: 'The living world',
     accent: '#a4c778',
@@ -23,7 +33,11 @@ export const worlds = [
   },
   {
     id: 'yellow',
-    scene: { src: '/scenes/yellow-remaster.webp', width: 2001, height: 786 },
+    scene: {
+      src: withBasePath('/scenes/yellow-remaster.webp'),
+      width: 2001,
+      height: 786,
+    },
     name: 'Yellow Aztec',
     title: 'The golden age',
     accent: '#eac17b',
@@ -34,7 +48,11 @@ export const worlds = [
   },
   {
     id: 'red',
-    scene: { src: '/scenes/red-remaster.webp', width: 2008, height: 783 },
+    scene: {
+      src: withBasePath('/scenes/red-remaster.webp'),
+      width: 2008,
+      height: 783,
+    },
     name: 'Red Aztec',
     title: 'The furnace',
     accent: '#ec6840',
@@ -45,7 +63,11 @@ export const worlds = [
   },
   {
     id: 'pink',
-    scene: { src: '/scenes/pink-remaster.webp', width: 1954, height: 805 },
+    scene: {
+      src: withBasePath('/scenes/pink-remaster.webp'),
+      width: 1954,
+      height: 805,
+    },
     name: 'Pink Aztec',
     title: 'The quiet garden',
     accent: '#dc97ca',
@@ -56,7 +78,11 @@ export const worlds = [
   },
   {
     id: 'white',
-    scene: { src: '/scenes/white-remaster.webp', width: 1954, height: 805 },
+    scene: {
+      src: withBasePath('/scenes/white-remaster.webp'),
+      width: 1954,
+      height: 805,
+    },
     name: 'White Aztec',
     title: 'The silent frontier',
     accent: '#d3e8ee',

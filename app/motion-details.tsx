@@ -17,6 +17,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import type { InterfaceCue } from '@/lib/soundscape';
+import { withBasePath } from '@/lib/base-path';
 
 export function FeaturedPreview({
   poster,
@@ -145,7 +146,7 @@ export function FeaturedPreview({
           <video
             ref={video}
             className="world-film"
-            src="/films/six-worlds.mp4"
+            src={withBasePath('/films/six-worlds.mp4')}
             poster={poster}
             controls
             playsInline

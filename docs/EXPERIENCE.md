@@ -46,6 +46,19 @@ The [official restored V5 archive](https://v5attractor.2advanced.com/) supplies 
 
 The default scenes are faithful AI-assisted reconstructions guided by those originals. They retain composition while reinterpreting fine texture. They are stored as lossless WebP at the generator's returned sizes and are not recovered historical detail. Original files remain available in [`public/scenes/`](../public/scenes/). Full per-asset provenance and rights notes are in [`ASSET-CREDITS.md`](ASSET-CREDITS.md).
 
+## Licensing boundary
+
+The software, tests, documentation, and project-authored arrangement were
+developed with AI assistance and are intended to be covered only by the scoped
+MIT license in [`LICENSING.md`](../LICENSING.md), to the extent Neil Opet and
+contributors hold the relevant rights.
+The original panoramas, extracted audio, vector and Flash-derived material,
+branding, and other underlying works remain separate. The six remasters are
+AI-assisted interpretations, and the film is a new silent selection and
+arrangement built from them; neither is presented as an official recovered V5
+asset or as a license to the underlying media. Attribution does not substitute
+for permission.
+
 ## Audio measurements
 
 Audio was decoded and trimmed to the SWF sample counts, removing MP3 padding. These exact source counts are retained in the shipped WAVs:
