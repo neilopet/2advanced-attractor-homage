@@ -1,0 +1,81 @@
+<Rive version="1" kind="fragment">
+    <Artboard defaultStateMachineId="0:50" styleId="0:3" width="1440" height="500" name="AttractorShutters" id="0:2">
+        <LayoutComponentStyle name="ArtboardStyle" id="0:3"/>
+        <Shape x="720" y="-126" name="TopShutter" id="0:10">
+            <Rectangle width="1440" height="252" originX="0.5" originY="0.5" name="TopPath"/>
+            <Fill name="TopFill"><SolidColor colorValue="FF000000" name="TopBlack"/></Fill>
+        </Shape>
+        <Shape x="720" y="626" name="BottomShutter" id="0:11">
+            <Rectangle width="1440" height="252" originX="0.5" originY="0.5" name="BottomPath"/>
+            <Fill name="BottomFill"><SolidColor colorValue="FF000000" name="BottomBlack"/></Fill>
+        </Shape>
+        <LinearAnimation fps="41" duration="73" name="OpenShutters" id="0:30">
+            <KeyedObject objectId="0:10"><KeyedProperty propertyKey="14">
+                <KeyFrameDouble value="125" interpolationType="linear"/>
+                <KeyFrameDouble value="125" interpolationType="linear" frame="21"/>
+                <KeyFrameDouble value="124" interpolationType="linear" frame="22"/>
+                <KeyFrameDouble value="120" interpolationType="linear" frame="35"/>
+                <KeyFrameDouble value="40" interpolationType="linear" frame="45"/>
+                <KeyFrameDouble value="-90" interpolationType="linear" frame="55"/>
+                <KeyFrameDouble value="-124" interpolationType="linear" frame="65"/>
+                <KeyFrameDouble value="-126" interpolationType="linear" frame="69"/>
+                <KeyFrameDouble value="-126" frame="73"/>
+            </KeyedProperty></KeyedObject>
+            <KeyedObject objectId="0:11"><KeyedProperty propertyKey="14">
+                <KeyFrameDouble value="375" interpolationType="linear"/>
+                <KeyFrameDouble value="375" interpolationType="linear" frame="21"/>
+                <KeyFrameDouble value="376" interpolationType="linear" frame="22"/>
+                <KeyFrameDouble value="380" interpolationType="linear" frame="35"/>
+                <KeyFrameDouble value="460" interpolationType="linear" frame="45"/>
+                <KeyFrameDouble value="590" interpolationType="linear" frame="55"/>
+                <KeyFrameDouble value="624" interpolationType="linear" frame="65"/>
+                <KeyFrameDouble value="626" interpolationType="linear" frame="69"/>
+                <KeyFrameDouble value="626" frame="73"/>
+            </KeyedProperty></KeyedObject>
+        </LinearAnimation>
+        <LinearAnimation fps="41" duration="34" name="CloseShutters" id="0:31">
+            <KeyedObject objectId="0:10"><KeyedProperty propertyKey="14">
+                <KeyFrameDouble value="-126" interpolationType="linear"/>
+                <KeyFrameDouble value="-126" interpolationType="linear" frame="4"/>
+                <KeyFrameDouble value="-125" interpolationType="cubic" frame="5"/>
+                <KeyFrameDouble value="125" frame="34"/>
+            </KeyedProperty></KeyedObject>
+            <KeyedObject objectId="0:11"><KeyedProperty propertyKey="14">
+                <KeyFrameDouble value="626" interpolationType="linear"/>
+                <KeyFrameDouble value="626" interpolationType="linear" frame="4"/>
+                <KeyFrameDouble value="625" interpolationType="cubic" frame="5"/>
+                <KeyFrameDouble value="375" frame="34"/>
+            </KeyedProperty></KeyedObject>
+        </LinearAnimation>
+        <StateMachine name="ShutterIdle" id="0:50">
+            <StateMachineLayer name="IdleLayer" id="0:51">
+                <AnyState x="200" y="-120"/><ExitState x="400" y="-120"/>
+                <EntryState x="40" y="120"><StateTransition stateToId="0:52"/></EntryState>
+                <AnimationState x="200" y="120" animationId="0:31" id="0:52"/>
+            </StateMachineLayer>
+        </StateMachine>
+
+    </Artboard>
+    <Artboard x="1600" y="0" defaultStateMachineId="0:70" styleId="0:4" width="120" height="120" name="LoadingEmblem" id="0:40">
+        <LayoutComponentStyle name="EmblemStyle" id="0:4"/>
+        <Shape x="60" y="60" name="LoadingMark" id="0:41">
+            <Ellipse width="88" height="88" originX="0.5" originY="0.5" name="RingPath"/>
+            <Stroke thickness="4" cap="round" name="RingStroke"><SolidColor colorValue="FF27E6D0" name="RingColor"/></Stroke>
+        </Shape>
+        <Shape x="60" y="60" name="LoadingDiamond" id="0:42">
+            <Polygon width="34" height="34" points="4" originX="0.5" originY="0.5" name="DiamondPath"/>
+            <Fill name="DiamondFill"><SolidColor colorValue="FF27E6D0" name="DiamondColor"/></Fill>
+        </Shape>
+        <LinearAnimation duration="180" loopValue="loop" name="LoadingSpin" id="0:43">
+            <KeyedObject objectId="0:41"><KeyedProperty propertyKey="15"><KeyFrameDouble value="0" interpolationType="linear"/><KeyFrameDouble value="6.2831855" interpolationType="linear" frame="180"/></KeyedProperty></KeyedObject>
+            <KeyedObject objectId="0:42"><KeyedProperty propertyKey="15"><KeyFrameDouble value="0" interpolationType="linear"/><KeyFrameDouble value="-6.2831855" interpolationType="linear" frame="180"/></KeyedProperty></KeyedObject>
+        </LinearAnimation>
+        <StateMachine name="LoadingState" id="0:70">
+            <StateMachineLayer name="LoadingLayer" id="0:71">
+                <AnyState x="200" y="-120"/><ExitState x="400" y="-120"/>
+                <EntryState x="40" y="120"><StateTransition stateToId="0:72"/></EntryState>
+                <AnimationState x="200" y="120" animationId="0:43" id="0:72"/>
+            </StateMachineLayer>
+        </StateMachine>
+    </Artboard>
+</Rive>
